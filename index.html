@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="A Unified and Fine-Grained Controller for Humanoid Loco-Manipulation.">
+  <meta name="keywords" content="Humanoid Loco-Manipulation, Humanoid Robotics, ULC">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ULC: A Unified and Fine-Grained Controller for Humanoid
+    Loco-Manipulation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><span style="color: rgb(191, 3, 3);">ULC</span>: A <span
+                style="color: rgb(191, 3, 3);">U</span>nified and
+              Fine-Grained <span style="color: rgb(191, 3, 3);">C</span>ontroller for Humanoid
+              <span style="color: rgb(191, 3, 3);">L</span>oco-Manipulation
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/Hellod035">Wandong
+                  Sun</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="https://fengluying.github.io/">Luying
+                  Feng</a><sup>2*</sup>,</span>
+              <span class="author-block">
+                <a href="https://ulc-humanoid.github.io/">Baoshi Cao</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://ulc-humanoid.github.io/">Yang Liu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://en.westlake.edu.cn/faculty/yaochu-jin.html">Yaochu
+                  Jin</a><sup>2†</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://ulc-humanoid.github.io/">Zongwu
+                  Xie</a><sup>1†</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Harbin Institute of
+                Technology,</span>
+              <span class="author-block"><sup>2</sup>Westlake
+                University</span>
+            </div>
+
+            <div class="is-size-6 publication-authors" style="margin-top: 10px;">
+              <span class="author-block"><sup>*</sup>Equal contribution,</span>
+              <span class="author-block"><sup>†</sup>Corresponding authors</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="./static/paper/paper.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2507.06905" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://youtu.be/xIpgdCaML24?si=amUuvv1qTSKOielk"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://www.bilibili.com/video/BV1X4GAzyEGv"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>BiliBili</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://ulc-humanoid.github.io" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <!-- <h2 class="title is-3">Video</h2> -->
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/xIpgdCaML24?si=M_19OFrOPqOouc-R" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Paper video. -->
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Loco-Manipulation for humanoid robots aims to enable robots to integrate
+              mobility with upper-body tracking capabilities. Most existing approaches adopt
+              hierarchical architectures that decompose control into isolated upper-body
+              (manipulation) and lower-body (locomotion) policies. While this decomposition
+              reduces training complexity, it inherently limits coordination between
+              subsystems and contradicts the unified whole-body control exhibited by humans.
+            </p>
+            <p>
+              We demonstrate that a single unified policy can achieve a combination of
+              tracking accuracy, large workspace, and robustness for humanoid
+              loco-manipulation. We propose the <span style="color: rgb(191, 3, 3);">U</span>nified
+              <span style="color: rgb(191, 3, 3);">L</span>oco-Manipulation
+              <span style="color: rgb(191, 3, 3);">C</span>ontroller
+              (<span style="color: rgb(191, 3, 3);">ULC</span>), a
+              single-policy framework that simultaneously tracks root velocity, root height,
+              torso rotation, and dual-arm joint positions in an end-to-end manner, proving
+              the feasibility of unified control without sacrificing performance. We achieve
+              this unified control through key technologies: sequence skill acquisition for
+              progressive learning complexity, residual action modeling for fine-grained
+              control adjustments, command polynomial interpolation for smooth motion
+              transitions, random delay release for robustness to deploy variations, load
+              randomization for generalization to external disturbances, and
+              center-of-gravity tracking for providing explicit policy gradients to maintain
+              stability.
+            </p>
+            <p>
+              We validate our method on the Unitree G1 humanoid robot with 3-DOF
+              (degrees-of-freedom) waist. Compared with strong baselines, <span
+                style="color: rgb(191, 3, 3);">ULC</span> shows better
+              tracking performance to disentangled methods and demonstrating larger workspace
+              coverage. The unified dual-arm tracking enables precise manipulation under
+              external loads while maintaining coordinated whole-body control for complex
+              loco-manipulation tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+    </div>
+  </section>
+
+  <!-- Main Figure -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="publication-image">
+            <img src="./static/images/method.png" alt="ULC Method Overview"
+              style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: none;" />
+            <p class="has-text-centered" style="margin-top: 10px; font-style: italic; color: #666;">
+              Method overview of the <span style="color: rgb(191, 3, 3);">U</span>nified
+              <span style="color: rgb(191, 3, 3);">L</span>oco-Manipulation
+              <span style="color: rgb(191, 3, 3);">C</span>ontroller
+              (<span style="color: rgb(191, 3, 3);">ULC</span>). Our approach
+              employs massively parallel reinforcement learning to train a
+              single unified policy that tracks procedurally sampled commands
+              including root velocity, root height, torso orientation, and arm
+              joint positions. The framework addresses multi-task learning
+              challenges through sequential skill acquisition with adaptive
+              curricula, deployment-realistic command generation with smooth
+              interpolation, and loaded balance optimization with
+              center-of-mass tracking.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- First row of videos -->
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Picking and Placing (Doll)</h2>
+            <video id="pick-doll-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/pick_doll.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Picking and Placing (Box)</h2>
+            <video id="pick-box-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/pick_box.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second row of videos -->
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Operating the Refrigerator</h2>
+            <video id="open-refrigerator-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/open_refrigerator.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Opening the Door</h2>
+            <video id="door-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/open_the_door.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third row of videos -->
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Playing Ukulele</h2>
+            <video id="ukulele-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/play_ukulele.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Pushing Cart</h2>
+            <video id="cart-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/push_cart.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth row of videos -->
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Operating the Microwave</h2>
+            <video id="microwave-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/manip_microwave.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Shoveling Sand</h2>
+            <video id="shovel-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/shovel_sand.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fifth row of videos -->
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Using Paper Shredder</h2>
+            <video id="shredder-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/use_paper shredder.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Wiping Table</h2>
+            <video id="wipe-table-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/wipe_ table.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sixth row of videos -->
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Wiping Blackboard</h2>
+            <video id="wipe-blackboard-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/wipe_blackboard.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Waist Orientation in the Wild</h2>
+            <video id="waist-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/wild_waist_orientation.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seventh row of videos -->
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Pushing 1</h2>
+            <video id="push-1-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/push_1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Pushing 2</h2>
+            <video id="push-2-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/push_2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{sun2025ulcunifiedfinegrainedcontroller,
+      title={ULC: A Unified and Fine-Grained Controller for Humanoid Loco-Manipulation}, 
+      author={Wandong Sun and Luying Feng and Baoshi Cao and Yang Liu and Yaochu Jin and Zongwu Xie},
+      year={2025},
+      eprint={2507.06905},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2507.06905}, 
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+              code</a> of nerfies website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the
+            header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
